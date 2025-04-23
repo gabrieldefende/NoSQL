@@ -1,1 +1,344 @@
+db.estados.insertMany([
+  { _id: 1, sigla: "SP", nome: "São Paulo" },
+  { _id: 2, sigla: "MG", nome: "Minas Gerais" },
+  { _id: 3, sigla: "PR", nome: "Paraná" }
+])
 
+
+
+db.cidades.insertMany([
+  { _id: 1, id_estado: 1, nome: "Mococa" },
+  { _id: 2, id_estado: 1, nome: "Cajuru" },
+  { _id: 3, id_estado: 2, nome: "Guaxupé" },
+  { _id: 4, id_estado: 3, nome: "Curitiba" }
+])
+
+
+
+db.sexos.insertMany([
+  { _id: 1, initial: "M", nome: "Masculino" },
+  { _id: 2, initial: "F", nome: "Feminino" }
+])
+
+
+
+db.agentes.insertMany([
+  { _id: 1, matricula: "123", nome: "Jão", contratacao: "CLT" },
+  { _id: 2, matricula: "456", nome: "Zé", contratacao: "CLT" },
+  { _id: 3, matricula: "789", nome: "Toin", contratacao: "CLT" }
+])
+
+
+
+db.infracoes.insertMany([
+  { 
+    _id: 1,
+    descricao: "Transitar em velocidade superior à máxima permitida em até 20%",
+    valor: 85.15,
+    pontos: 5 
+  },
+  { 
+    _id: 2,
+    descricao: "Avançar o sinal vermelho do semáforo ou a parada obrigatória",
+    valor: 293.47,
+    pontos: 7 
+  },
+  { 
+    _id: 3,
+    descricao: "Falta do cinto de segurança",
+    valor: 195.32,
+    pontos: 5 
+  }
+])
+
+
+
+db.marcas.insertMany([
+  { _id: 1, nome: "Volkswagen" },
+  { _id: 2, nome: "Chevrolet" },
+  { _id: 3, nome: "Fiat" },
+  { _id: 4, nome: "Ford" },
+  { _id: 5, nome: "Peugeot" },
+  { _id: 6, nome: "Renault" }
+])
+
+
+
+db.cores.insertMany([
+  { _id: 1, nome: "Vermelho" },
+  { _id: 2, nome: "Branco" },
+  { _id: 3, nome: "Azul" },
+  { _id: 4, nome: "Verde" },
+  { _id: 5, nome: "Preto" }
+])
+
+
+
+
+db.modelos.insertMany([
+  { _id: 1, id_marca: 1, nome: "Polo" },
+  { _id: 2, id_marca: 1, nome: "Fusca" },
+  { _id: 3, id_marca: 2, nome: "Chevette" },
+  { _id: 4, id_marca: 3, nome: "Palio" },
+  { _id: 5, id_marca: 4, nome: "Ka" },
+  { _id: 6, id_marca: 1, nome: "Gol" },
+  { _id: 7, id_marca: 2, nome: "Opala" }
+])
+
+
+db.proprietarios.insertMany([
+  {
+    _id: 1,
+    id_cidade: 2,
+    id_sexo: 1,
+    nome: "Prof. Tiago",
+    cpf: "12345678910",
+    endereco: {
+      logradouro: "Rua dos Professores",
+      numero: "666",
+      complemento: "Casa",
+      bairro: "Centro",
+      cep: "14240000"
+    }
+  },
+  {
+    _id: 2,
+    id_cidade: 1,
+    id_sexo: 1,
+    nome: "Joazim",
+    cpf: "12345678910",
+    endereco: {
+      logradouro: "Rua dos Multados",
+      numero: "2",
+      complemento: "Casa",
+      bairro: "Centro",
+      cep: "14240000"
+    }
+  },
+  {
+    _id: 3,
+    id_cidade: 2,
+    id_sexo: 1,
+    nome: "Juquinha",
+    cpf: "12354896214",
+    endereco: {
+      logradouro: "Rua José Bonifácio",
+      numero: "89",
+      complemento: "Comercio",
+      bairro: "Jd. das Trevas",
+      cep: "13240000"
+    }
+  },
+  {
+    _id: 4,
+    id_cidade: 3,
+    id_sexo: 2,
+    nome: "Mariazinha",
+    cpf: "78923578214",
+    endereco: {
+      logradouro: "Av José Santos",
+      numero: "66",
+      complemento: "Casa",
+      bairro: "Centro",
+      cep: "14240000"
+    }
+  },
+  {
+    _id: 5,
+    id_cidade: 4,
+    id_sexo: 1,
+    nome: "Zezinho",
+    cpf: "96532578921",
+    endereco: {
+      logradouro: "Rua Antonio dos Santos",
+      numero: "100",
+      complemento: "Casa",
+      bairro: "Quebrada",
+      cep: "12240000"
+    }
+  }
+])
+
+
+
+db.veiculos.insertMany([
+  {
+    _id: 1,
+    id_modelo: 1,
+    id_proprietario: 1,
+    id_cor: 2,
+    placa: "EVA4960",
+    cadastro: "do Prof"
+  },
+  {
+    _id: 2,
+    id_modelo: 2,
+    id_proprietario: 1,
+    id_cor: 2,
+    placa: "BLD7764",
+    cadastro: "do Prof"
+  },
+  {
+    _id: 3,
+    id_modelo: 6,
+    id_proprietario: 1,
+    id_cor: 3,
+    placa: "CFU0412",
+    cadastro: "do Prof"
+  },
+  {
+    _id: 4,
+    id_modelo: 7,
+    id_proprietario: 1,
+    id_cor: 5,
+    placa: "ZZZ0666",
+    cadastro: "Troco pelo Gol"
+  },
+  {
+    _id: 5,
+    id_modelo: 3,
+    id_proprietario: 2,
+    id_cor: 1,
+    placa: "YDX5892",
+    cadastro: "Licenciado"
+  },
+  {
+    _id: 6,
+    id_modelo: 4,
+    id_proprietario: 3,
+    id_cor: 2,
+    placa: "KYN0169",
+    cadastro: "Licenciado"
+  },
+  {
+    _id: 7,
+    id_modelo: 5,
+    id_proprietario: 4,
+    id_cor: 5,
+    placa: "OKY0101",
+    cadastro: "Licenciado"
+  },
+  {
+    _id: 8,
+    id_modelo: 1,
+    id_proprietario: 5,
+    id_cor: 4,
+    placa: "YAG0101",
+    cadastro: "Licenciado"
+  }
+])
+
+
+
+db.multas.insertMany([
+  {
+    id_agente: 3,
+    id_veiculo: 1,
+    id_cidade: 3,
+    id_infracao: 2,
+    lancamento: "Condutor sem vergonha",
+    data_multa: ISODate("2018-12-30"),
+    hora: "08:22",
+    local_multa: "Praça do Centro"
+  },
+  {
+    id_agente: 1,
+    id_veiculo: 1,
+    id_cidade: 2,
+    id_infracao: 3,
+    lancamento: "Com camisa do vasco",
+    data_multa: ISODate("2018-12-31"),
+    hora: "08:15",
+    local_multa: "Avenida do rio"
+  },
+  {
+    id_agente: 2,
+    id_veiculo: 1,
+    id_cidade: 1,
+    id_infracao: 3,
+    lancamento: "Tocando música que machuca o coração",
+    data_multa: ISODate("2018-12-31"),
+    hora: "11:30",
+    local_multa: "Vale da Sofrência"
+  },
+  {
+    id_agente: 1,
+    id_veiculo: 5,
+    id_cidade: 1,
+    id_infracao: 1,
+    lancamento: "Agente Rodoviário",
+    data_multa: ISODate("2019-02-28"),
+    hora: "00:22",
+    local_multa: "Rua"
+  },
+  {
+    id_agente: 2,
+    id_veiculo: 5,
+    id_cidade: 1,
+    id_infracao: 1,
+    lancamento: "Agente Rodoviário",
+    data_multa: ISODate("2018-05-30"),
+    hora: "13:25",
+    local_multa: "Avenida"
+  },
+  {
+    id_agente: 1,
+    id_veiculo: 6,
+    id_cidade: 3,
+    id_infracao: 3,
+    lancamento: "Agente Rodoviário",
+    data_multa: ISODate("2019-05-30"),
+    hora: "14:33",
+    local_multa: "Praça do Centro"
+  },
+  {
+    id_agente: 1,
+    id_veiculo: 7,
+    id_cidade: 3,
+    id_infracao: 2,
+    lancamento: "Agente Rodoviário",
+    data_multa: ISODate("2017-03-14"),
+    hora: "15:30",
+    local_multa: "Praça José Gomes"
+  },
+  {
+    id_agente: 3,
+    id_veiculo: 8,
+    id_cidade: 4,
+    id_infracao: 2,
+    lancamento: "Agente Rodoviário",
+    data_multa: ISODate("2017-12-23"),
+    hora: "17:18",
+    local_multa: "Rua"
+  },
+  {
+    id_agente: 3,
+    id_veiculo: 1,
+    id_cidade: 4,
+    id_infracao: 3,
+    lancamento: "Agente Rodoviário",
+    data_multa: ISODate("2016-08-19"),
+    hora: "09:26",
+    local_multa: "Estacionamento"
+  },
+  {
+    id_agente: 1,
+    id_veiculo: 1,
+    id_cidade: 3,
+    id_infracao: 1,
+    lancamento: "Agente Rodoviário",
+    data_multa: ISODate("2018-11-15"),
+    hora: "10:34",
+    local_multa: "Praça da Matriz"
+  },
+  {
+    id_agente: 3,
+    id_veiculo: 1,
+    id_cidade: 3,
+    id_infracao: 3,
+    lancamento: "Agente Rodoviário",
+    data_multa: ISODate("2019-01-28"),
+    hora: "15:23",
+    local_multa: "Praça de pedágio"
+  }
+])
